@@ -30,7 +30,7 @@ GROUP BY [menu], [orario]
 	</table>
 </cfoutput>
 </cfsavecontent>
-<cfmail to="barbara.stuerz@oberalp.it" cc="egon.gastaldelli@oberalp.it;luca.varini@oberalp.it"  from="cfservice@oberalp.it" subject="Kitchen Reservations #dateformat(Now(),'dd/mm/yyyy')#" type="html">
+<cfmail to="kitchenemail@oberalp.it" from="cfservice@oberalp.it" subject="Kitchen Reservations #dateformat(Now(),'dd/mm/yyyy')#" type="html">
 #report#
 </cfmail>
 <cfoutput>#report#</cfoutput>
