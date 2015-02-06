@@ -16,6 +16,8 @@ pomoca = 484832858228746, Pomoca Climbing Skins
 	<cfset var linkArray = ArrayNew("1")>
 	<cfset var x = 1>
 	<cfset var i = 1>
+	<cfset var tempTime = "">
+	<cfset var tempDate = "">
 
  	<cfloop index="i" from="1" to="#ArrayLen(cfData.data)#">
 		<cfif (cfData.data[i].from.name EQ arguments.brand) AND StructKeyExists(cfData.data[i], "message")>
@@ -29,7 +31,9 @@ pomoca = 484832858228746, Pomoca Climbing Skins
 				<cfset picArray[x] = cfData.data[i].picture>
 			</cfif>
 			<cfif StructKeyExists(cfData.data[i], "created_time")>
-				<cfset dateArray[x] = DateFormat(ListFirst(cfData.data[i].created_time, "T"),"yyyy-mm-dd")>
+				<cfset tempDate = DateFormat(ListFirst(cfData.data[i].created_time, "T"),"yyyy-mm-dd")>
+				<cfset tempTime = ListFirst(ListLast(cfData.data[i].created_time,"T"), "+")>
+				<cfset dateArray[x] = tempDate & " " & tempTime>
 			</cfif>
 			<cfif StructKeyExists(cfData.data[i], "link")>
 				<cfset linkArray[x] = cfData.data[i].link>
@@ -41,7 +45,7 @@ pomoca = 484832858228746, Pomoca Climbing Skins
 	<cfset QueryAddColumn(feedOberalp_ordered, "brand", "VarChar", nameArray)>
 	<cfset QueryAddColumn(feedOberalp_ordered, "msg", "VarChar", msgArray)>
 	<cfset QueryAddColumn(feedOberalp_ordered, "pic", "VarChar", picArray)>
-	<cfset QueryAddColumn(feedOberalp_ordered, "dateCreated", "Date", dateArray)>
+	<cfset QueryAddColumn(feedOberalp_ordered, "dateCreated", "VarChar", dateArray)>
 	<cfset QueryAddColumn(feedOberalp_ordered, "link", "VarChar", linkArray)>
 
 	<cfreturn feedOberalp_ordered>
