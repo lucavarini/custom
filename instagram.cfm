@@ -1,0 +1,1 @@
+<div class="hidden-xs"><iframe src="http://snapwidget.com/in/?h=c2FsZXdhfGlufDEyNXwyfDJ8fG5vfDV8bm9uZXxvblN0YXJ0fHllc3xubw==&ve=140814" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:260px; height:260px"></iframe></div>
