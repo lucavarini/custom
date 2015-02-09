@@ -2,7 +2,7 @@
 <link type="text/css" rel="stylesheet" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/kitchen/</cfoutput>css/style_table.css" />
 <cfquery datasource="muracms_apps" name="reservationsQuery">
 SELECT *
-FROM kitchen
+FROM kitchen_view
 WHERE data_prenotazione >= #Now()#
 ORDER BY data_prenotazione ASC, orario ASC, nome ASC
 </cfquery>

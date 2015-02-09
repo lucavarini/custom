@@ -2,7 +2,7 @@
 <link type="text/css" rel="stylesheet" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/event/</cfoutput>css/style_table.css" />
 <cfquery datasource="muracms_apps" name="reservationsQuery">
 SELECT *
-FROM event_subscription
+FROM event_subscription_view
 ORDER BY nome ASC
 </cfquery>
 <!--- confirm delete function --->
