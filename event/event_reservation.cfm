@@ -36,24 +36,24 @@
 <cfelse>
 <form action="<cfoutput>#GetFileFromPath(GetTemplatePath())#</cfoutput>" method="post" tmt:validate="true">
 	<fieldset>
-	<table>
-	<tr>
-		<td>Name-Nachname<br />Nome-Cognome<span class="required">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-		<td><input name="nome" type="text" size="30" tmt:required="true" tmt:message="Please insert your name" /></td>
-	</tr>
-	<tr>
-		<td valign="top">Rodel ausleihen<br />Noleggio slitta<span class="required">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-		<td>
-			<input name="opzione" type="radio" class="boxes" value="1" tmt:required="true" tmt:message="Please select an option"/> Ja/Si<br />
-			<input name="opzione" type="radio" class="boxes" value="0" /> Nein/No<br />
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2"><input name="submit" type="submit" value="Anmeldung/Iscrizione" id="submit" /></td>
-	</tr>
+		<table>
+			<tr>
+				<td>Name-Nachname<br />Nome-Cognome<span class="required">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+				<td><input name="nome" type="text" size="30" tmt:required="true" tmt:message="Please insert your name" /></td>
+			</tr>
+			<tr>
+				<td valign="top">Rodel ausleihen<br />Noleggio slitta<span class="required">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+				<td>
+					<input name="opzione" type="radio" class="boxes" value="1" tmt:required="true" tmt:message="Please select an option"/> Ja/Si<br />
+					<input name="opzione" type="radio" class="boxes" value="0" /> Nein/No<br />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input name="submit" type="submit" value="Anmeldung/Iscrizione" id="submit" /></td>
+			</tr>
+		</table>
 	</fieldset>
 </form>
-</table>
 </cfif>
 </body>
 </html>
