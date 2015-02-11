@@ -1,6 +1,6 @@
 <cfprocessingdirective pageencoding="utf-8">
 <cfimport taglib="CustomTags/" prefix="tmt">
-<cfparam name="URL.ap" default="Rodi">
+<cfparam name="URL.ap" default="rodi">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -50,10 +50,10 @@ $(document).ready(function() {
 		   ,<cfqueryparam value="#form.notes#" cfsqltype="cf_sql_varchar">)
 	</cfquery>
 	<p>Ok!</p>
-	<!--- <script>
+	<script>
 		parent.location.reload(true);
 		window.parent.Shadowbox.close();
-	</script> --->
+	</script>
 <cfelse>
 <form action="<cfoutput>#GetFileFromPath(GetTemplatePath())#</cfoutput>" method="post" tmt:validate="true">
 	<fieldset>

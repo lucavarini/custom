@@ -1,9 +1,10 @@
 <cfimport taglib="CustomTags" prefix="tmt">
 <link type="text/css" rel="stylesheet" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/event/</cfoutput>css/style_table.css" />
-<cfparam name="URL.ap" default="Rodi">
+<cfset ap= $.content('ap')>
 <cfquery datasource="muracms_apps" name="reservationsQuery">
 SELECT *
 FROM apartments_reservations_view
+WHERE apartment=<cfqueryparam value="#ap#" cfsqltype="cf_sql_varchar">
 ORDER BY arrival_date
 </cfquery>
 <!--- confirm delete function --->
@@ -22,10 +23,11 @@ ORDER BY arrival_date
 <table id="hor-minimalist-b">
 	<thead>
 		<tr>
-			<th colspan="5"><div align="center"><a rel="shadowbox;width=360;height=280" class="btn btn-larg btn-primary" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/apartment/apartment_reservation.cfm</cfoutput>">Iscrizione/Anmeldung</a></div></th>
+			<th colspan="5"><div align="center"><a rel="shadowbox;width=360;height=280" class="btn btn-larg btn-primary" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/apartment/apartment_reservation.cfm?ap=#ap#</cfoutput>">Iscrizione/Anmeldung</a></div></th>
 		</tr>
 		<tr>
-			<th scope="col">Nome<br />Name</th>
+			<th scope="col">Nome<br />
+			Name</th>
 			<th scope="col">Data arrivo<br />Anreise</th>
 			<th scope="col">Data partenza<br />Abreise</th>
 			<th scope="col">Note<br />Anmerkung</th>
