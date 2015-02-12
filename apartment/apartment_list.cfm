@@ -23,7 +23,7 @@ ORDER BY arrival_date
 <table id="hor-minimalist-b">
 	<thead>
 		<tr>
-			<th colspan="5"><div align="center"><a rel="shadowbox;width=360;height=280" class="btn btn-larg btn-primary" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/apartment/apartment_reservation.cfm?ap=#ap#</cfoutput>">Iscrizione/Anmeldung</a></div></th>
+			<th colspan="5"><div align="center"><a rel="shadowbox;width=420;height=380;" class="btn btn-larg btn-primary" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/apartment/apartment_reservation.cfm?ap=#ap#</cfoutput>">Iscrizione/Anmeldung</a></div></th>
 		</tr>
 		<tr>
 			<th scope="col">Nome<br />

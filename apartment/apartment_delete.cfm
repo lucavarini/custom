@@ -13,6 +13,6 @@
 	</cfquery>
 	<p>Ok!</p>
 </cfif>
-<cflocation url="../../../../index.cfm/4-you/benefits/apartments/rodi-rules/">
+<cflocation url="../../../../index.cfm/4-you/benefits/apartments/#ListLast(CGI.HTTP_REFERER, "/")#">
 </body>
 </html>
