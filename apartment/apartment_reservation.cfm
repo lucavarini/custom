@@ -60,7 +60,7 @@ Data partenza: #dateformat(form.departure_datepicker,'dd/mm/yyyy')#<br />
 Note: #form.notes#<br />
 <br /><br />
 Per gestire le iscrizioni cliccare il seguente link<br />
-<a href="javascript:;">Link pagina</a>
+<a href="http://intra.intranet.salewa.com/default/index.cfm/4-you/benefits/apartments/apartments-subscriptions/">http://intra.intranet.salewa.com/default/index.cfm/4-you/benefits/apartments/apartments-subscriptions/</a>
 </cfmail>  
 <table width="100%">
 	<tr>
