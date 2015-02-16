@@ -14,6 +14,8 @@
 <script type="text/javascript" src="js/tmt_net.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js" ></script>
 <cfset todayDate = dateFormat(Now(),"dd/mm/yyyy")>
+<!--- Email to address --->
+<cfset mailRecipients ="apartmentsemail@oberalp.it">
 <style>
 .ui-widget {
   font-size: 11px;
@@ -49,11 +51,28 @@ $(document).ready(function() {
 			,<cfqueryparam value="#dateformat(form.departure_datepicker,'dd/mm/yyyy')#" cfsqltype="cf_sql_date">
 		   ,<cfqueryparam value="#form.notes#" cfsqltype="cf_sql_varchar">)
 	</cfquery>
-	<p>Ok!</p>
-	<script>
-		parent.location.reload(true);
-		window.parent.Shadowbox.close();
-	</script>
+	 <cfmail to = "#mailRecipients#" from="cfservice@oberalp.it" subject="Apartment Reservation #dateformat(Now(),'dd/mm/yyyy')#" type="html">
+Un utente ha riservato un appartamento.<br />
+Appartamento: #form.apartment#<br />
+Nome: #form.name_surname#<br />
+Data arrivo: #dateformat(form.arrival_datepicker,'dd/mm/yyyy')#<br />
+Data partenza: #dateformat(form.departure_datepicker,'dd/mm/yyyy')#<br />
+Note: #form.notes#<br />
+<br /><br />
+Per gestire le iscrizioni cliccare il seguente link<br />
+<a href="javascript:;">Link pagina</a>
+</cfmail>  
+<table width="100%">
+	<tr>
+		<td>
+			<div align="center">
+			<p>Iscrizione avvenuta con successo</p>
+			<p>Anmeldung erfolgreich abgeschlossen</p>
+			<p><a href="javascript:window.parent.Shadowbox.close();">Chiudi questa finestra / Fenster schliessen</a></p>
+			</div>
+		</td>
+	</tr>
+</table>
 <cfelse>
 <form action="<cfoutput>#GetFileFromPath(GetTemplatePath())#</cfoutput>" method="post" tmt:validate="true">
 	<fieldset>
