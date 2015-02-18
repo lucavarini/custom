@@ -1,23 +1,3 @@
-<cfsilent>
-
-<!--- <cfldap action="QUERY"
-name="ldap"
-attributes="jpegPhoto"
-start="dc=intranet,dc=salewa,dc=com"
-filter="sAMAccountName=lucav"
-server="itdc01.intranet.salewa.com"
-username="salewacom\lucav"
-password="specialized"> --->
-
-<!--- <cfscript>
-     ldapPhoto = toString(ldap.jpegPhoto);
-
-     ldapPhoto = binaryDecode(ldapPhoto, "base64");
-</cfscript>
- --->
-</cfsilent>
-<!--- <cfcontent type="image/jpeg" variable="#ldapPhoto#"> --->
-<!--- <cfimage source="#ldap.jpegPhoto#" action="writeToBrowser"> --->
 <!--- USE IPPHONE TO STORE BIRTHDAY ---> 
 <cfldap action="QUERY"
 name="activeusers"
@@ -27,7 +7,6 @@ filter="(&(objectCategory=Person)(objectClass=User)(samAccountType:1.2.840.11355
 server="itdc01.intranet.salewa.com"
 username="salewacom\lucav"
 password="specialized">
-<!--- <cfdump var="#activeusers#"> --->
 <cfquery datasource="muracms_apps">
 	DELETE FROM birthdays
 </cfquery>
@@ -56,6 +35,7 @@ password="specialized">
 		</cfquery>
 	</cfif>
 </cfloop>
+<!--- 
 <cfquery datasource="muracms_apps" name="birthday">
 	select *
 	from birthdays_view
@@ -71,6 +51,4 @@ password="specialized">
 	#title# (#c#)<br />
 	#dateformat(birthdayDate, "dd mmmm")#<br />
 </cfoutput>
-
-
-
+ --->
