@@ -55,8 +55,8 @@ $(document).ready(function() {
 Un utente ha riservato un appartamento.<br />
 Appartamento: #form.apartment#<br />
 Nome: #form.name_surname#<br />
-Data arrivo: #dateformat(form.arrival_datepicker,'dd/mm/yyyy')#<br />
-Data partenza: #dateformat(form.departure_datepicker,'dd/mm/yyyy')#<br />
+Data arrivo: #form.arrival_datepicker#<br />
+Data partenza: #form.departure_datepicker#<br />
 Note: #form.notes#<br />
 <br /><br />
 Per gestire le iscrizioni cliccare il seguente link<br />
