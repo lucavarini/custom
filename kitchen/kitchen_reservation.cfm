@@ -117,7 +117,14 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2"><input name="submit" type="submit" value="Reservieren/Prenotare" id="submit" /></td>
+		<td colspan="2">
+			<cfset actualTime = TimeFormat(Now(),"HH") & TimeFormat(Now(),"mm")>
+			<cfif actualTime LTE "930" or actualTime GTE "1400">
+				<input name="submit" type="submit" value="Reservieren/Prenotare" id="submit" />
+			<cfelse>
+				Reservation is not possible between 9:30 and 14 o'clock.<br> Sorry!
+			</cfif>
+		</td>
 	</tr>
 	</fieldset>
 </form>
