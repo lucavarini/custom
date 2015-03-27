@@ -1,7 +1,7 @@
 <style type="text/css">
 	body{font-size: 12px; font-family: Verdana, Geneva, sans-serif;}
 	.altRow{
-		width:100%; 
+		width:90%; 
 		border-collapse:collapse; 
 	}
 	.altRow thead{ 
@@ -16,7 +16,7 @@
 	}​
 
 	.altRowN{
-		width:80%; 
+		width:90%; 
 		border-collapse:collapse; 
 	}
 	.altRowN thead{ 
@@ -51,7 +51,7 @@
 	<cfoutput query="km_current">
 	<tr>
 		<cfif km_current.currentrow mod 2 neq 0>
-			<td rowspan="2" style="width: 8%">#LSdateformat(km_current.giorno,"ddd dd/mm")#</td>
+			<td rowspan="2" style="width: 12%">#LSdateformat(km_current.giorno,"ddd dd/mm")#</td>
 		</cfif> 
 		<td>#km_current.menu1#</td>
 		<td>#km_current.menu2#</td>
@@ -61,7 +61,7 @@
 </table>
 <p>&nbsp;</p>
 <cfif km_next.recordCount GT 0>
-<table class="altRowN" style="border-collapse:collapse; width:100%; ">
+<table class="altRowN" style="border-collapse:collapse; width:90%;">
  	<thead>
 		<tr>
 			<td style="width: 12%">Tag / Giorno</td>
@@ -73,7 +73,7 @@
 	<cfoutput query="km_next">
 	<tr>
 		<cfif km_next.currentrow mod 2 neq 0>
-			<td rowspan="2" style="width: 8%">#LSdateformat(km_next.giorno,"ddd dd/mm")#</td>
+			<td rowspan="2" style="width: 12%">#LSdateformat(km_next.giorno,"ddd dd/mm")#</td>
 		</cfif> 
 		<td>#km_next.menu1#</td>
 		<td>#km_next.menu2#</td>
