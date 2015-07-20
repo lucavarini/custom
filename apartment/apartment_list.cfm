@@ -4,7 +4,7 @@
 <cfquery datasource="muracms_apps" name="reservationsQuery">
 SELECT *
 FROM apartments_reservations_view
-WHERE apartment=<cfqueryparam value="#ap#" cfsqltype="cf_sql_varchar">
+WHERE apartment Like <cfqueryparam value="#ap#%" cfsqltype="cf_sql_varchar">
 ORDER BY arrival_date
 </cfquery>
 <!--- confirm delete function --->
@@ -23,11 +23,12 @@ ORDER BY arrival_date
 <table id="hor-minimalist-b">
 	<thead>
 		<tr>
-			<th colspan="5"><div align="center"><a rel="shadowbox;width=420;height=380;" class="btn btn-larg btn-primary" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/apartment/apartment_reservation.cfm?ap=#ap#</cfoutput>">Iscrizione/Anmeldung</a></div></th>
+			<th colspan="6"><div align="center"><a rel="shadowbox;width=420;height=380;" class="btn btn-larg btn-primary" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/apartment/apartment_reservation.cfm?ap=#ap#</cfoutput>">Richiesta/Reservierungsanfrage</a></div></th>
 		</tr>
 		<tr>
 			<th scope="col">Nome<br />
 			Name</th>
+			<th scope="col">Appartamento<br />Wohnung</th>
 			<th scope="col">Data arrivo<br />Anreise</th>
 			<th scope="col">Data partenza<br />Abreise</th>
 			<th scope="col">Note<br />Anmerkung</th>
@@ -43,6 +44,7 @@ ORDER BY arrival_date
 		<cfoutput query="reservationsQuery" startRow="#reservationsQueryStartRow#" maxRows="#reservationsQueryMaxRows#">
 			<tr>
 				<td>#reservationsQuery.name_surname#</td>
+				<td>#reservationsQuery.apartment#</td>
 				<td>#DateFormat(reservationsQuery.arrival_date, "dd/mm/yy")#</td>
 				<td>#DateFormat(reservationsQuery.departure_date, "dd/mm/yy")#</td>
 				<td>#reservationsQuery.notes#</td>

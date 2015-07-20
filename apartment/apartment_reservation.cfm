@@ -81,6 +81,19 @@ Per gestire le iscrizioni cliccare il seguente link<br />
 				<td>Nome-Cognome<br />Name-Nachname<span class="required">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 				<td><input name="name_surname" type="text" size="30" tmt:required="true" tmt:message="Please insert your name" /></td>
 			</tr>
+			<!--- Renon has 2 apartments to choose from --->
+			<cfif URL.ap EQ "renon">
+				<tr>
+					<td>Appartamento<br />Wohnung<span class="required">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+					<td>
+						<select name="apartment" tmt:invalidindex="0" tmt:message="Please select an apartment">
+							<option>- Please select -</option>
+							<option value="renon sopra sx">Sopra sinistro/Oben links (max 4 pax)</option>
+							<option value="renon piano terra">Piano terra/Parterre (max 5 pax)</option>
+						</select>
+					</td>
+				</tr>
+			</cfif>
 			<tr>
 				<td valign="top">Data arrivo<br />Anreise<span class="required">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 				<td><input name="arrival_datepicker" type="text" id="arrival_datepicker" class="data" readonly="readonly" class="required" tmt:required="true" tmt:message="Please select an arrival date"></td>
@@ -98,7 +111,7 @@ Per gestire le iscrizioni cliccare il seguente link<br />
 				<td><input name="submit" type="submit" value="Anmeldung/Prenota" id="submit" /></td>
 			</tr>
 		</table>
-		<input type="hidden" name="apartment" value="<cfoutput>#URL.ap#</cfoutput>">
+		<cfif URL.ap NEQ "renon"><input type="hidden" name="apartment" value="<cfoutput>#URL.ap#</cfoutput>"></cfif>
 	</fieldset>
 </form>
 </cfif>

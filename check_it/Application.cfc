@@ -1,5 +1,4 @@
-<!---
-<cffunction name="onError" returnType="void" output="true">
+<!---<cffunction name="onError" returnType="void" output="true">
     <cfargument name="exception" required="true">
     <cfargument name="eventname" type="string" required="true">
     <cfset var errortext = "">
@@ -23,5 +22,4 @@
     </cfmail>
     
     <cflocation url="error.cfm">    
-</cffunction>
---->
+</cffunction>--->

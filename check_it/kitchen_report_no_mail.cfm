@@ -19,8 +19,6 @@ GROUP BY [orario], [menu], [nome]
 ORDER BY [nome]
 </cfquery> 
 <cfset orari="11:45,12:30,13:30">
-<cfif kitchenReservations.recordCount GT 0>
-<cfsavecontent variable="report">
 <h3>Kitchen Reservations <cfoutput>#dateformat(Now(),'dd/mm/yyyy')#</cfoutput></h3>
 <cfoutput query="kitchenReservationsSum" group="orario">
 	<h3>Time: #orario#</h3>
@@ -37,11 +35,8 @@ ORDER BY [nome]
 	</cfoutput>
 	</table>
 </cfoutput>
-</cfsavecontent>
-<cfmail to="kitchenemail@oberalp.it" from="cfservice@oberalp.it" subject="Kitchen Reservations OVERVIEW #dateformat(Now(),'dd/mm/yyyy')#" type="html">
-#report#
-</cfmail>
-<cfsavecontent variable="report">
+<p>&nbsp;</p>
+<hr>
 <h3>DETAIL</h3>
 <cfloop list="#orari#" index="orariolist">
 	<cfquery dbtype="query" name="q#replace(orariolist,":","")#">
@@ -67,12 +62,6 @@ ORDER BY [nome]
 		</table>
 	</cfoutput>
 </cfloop> 
-</cfsavecontent>
-<cfmail to="kitchenemail@oberalp.it" from="cfservice@oberalp.it" subject="Kitchen Reservations DETAILS #dateformat(Now(),'dd/mm/yyyy')#" type="html">
-#report#
-</cfmail>
-<cfoutput>#report#</cfoutput>
-</cfif>
 </body>
 </html>
 
