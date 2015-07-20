@@ -44,7 +44,7 @@ WHERE CONVERT(date,check_log.sysdate) = CONVERT(date, GETDATE())
 				<td>#activityQuery.technician_name# #Left(activityQuery.technician_lastname, 1)#.</td>
 				<td>#activityQuery.technician_backup_name# #Left(activityQuery.technician_backup_lastname, 1)#.</td>
 				<td align="center">
-					<cfif listContains("#activityDoneList#","#activityQuery.id_activity#")>
+					<cfif listFind("#activityDoneList#","#activityQuery.id_activity#")>
 						<span style="color: green">OK!</span>
 					<cfelse>
 						<a rel="shadowbox;width=420;height=280" class="btn btn-larg btn-primary" href="#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/check_it/check_confirm.cfm?id_activity=#activityQuery.id_activity#&id_technician=#activityQuery.id_technician#">Check!</a>
