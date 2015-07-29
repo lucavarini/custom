@@ -66,6 +66,14 @@ WHERE id_activity = <cfqueryparam value="#URL.id_activity#" cfsqltype="cf_sql_nu
 			#comments#
 		</td>
 	</tr>
+	<tr>
+		<td><strong>Onenote Link</strong></td>
+		<td>
+			<cfif #onenote# NEQ "">
+				<a href="#onenote#">#URLdecode(onenote)#</a>
+			</cfif>
+		</td>
+	</tr>
 	
 	</cfoutput>
 </table>
