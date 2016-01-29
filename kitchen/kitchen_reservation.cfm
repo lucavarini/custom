@@ -22,6 +22,7 @@
   font-size: 11px;
 }
 </style>
+<!--- Activate CF white space management otherwise js will not work! --->
 <script>
 $(document).ready(function() {
 	var status1 = $("#status1");
@@ -111,9 +112,27 @@ $(document).ready(function() {
 	<tr>
 		<td valign="top">Menuwahl/<br />Scelta menu<span class="required">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 		<td>
-			<input name="menu" type="radio" class="boxes" value="menu 1" tmt:required="true" tmt:message="Please select a menu"/> Menu 1<br />
-			<input name="menu" type="radio" class="boxes" value="menu 2" /> Menu 2<br />
-			<input name="menu" type="radio" class="boxes" value="menu 3" /> Menu 3<br /><br />
+			<table cellpadding="2" cellspacing="2">
+				<tr>
+					<td style="color: navy;">
+						<input name="menu" type="radio" class="boxes" value="menu 1" tmt:required="true" tmt:message="Please select a menu"/> Menu 1<br />
+						<input name="menu" type="radio" class="boxes" value="menu 2" /> Menu 2<br />
+						<input name="menu" type="radio" class="boxes" value="menu 3" /> Menu 3<br />
+						<input name="menu" type="radio" class="boxes" value="menu 4" /> Menu 4<br />
+						<input name="menu" type="radio" class="boxes" value="menu 5" /> Menu 5<br />
+					</td>
+					<td style="color: green;">
+						<input name="menu" type="radio" class="boxes" value="menu 6" /> Menu 6<br />
+						<input name="menu" type="radio" class="boxes" value="menu 7" /> Menu 7<br />
+						<input name="menu" type="radio" class="boxes" value="menu 8" /> Menu 8<br />
+						<input name="menu" type="radio" class="boxes" value="menu 9" /> Menu 9<br />
+						<input name="menu" type="radio" class="boxes" value="menu 10" /> Menu 10<br />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" style="color: orange;"><input name="menu" type="radio" class="boxes" value="menu 11" /> Menu 11</td>
+				</tr>
+			</table>
 		</td>
 	</tr>
 	<tr>

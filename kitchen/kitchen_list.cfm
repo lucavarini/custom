@@ -22,7 +22,7 @@ ORDER BY data_prenotazione ASC, orario ASC, nome ASC
 <table id="hor-minimalist-b">
 	<thead>
 		<tr>
-			<th colspan="5"><div align="center"><a rel="shadowbox;width=360;height=280" class="btn btn-larg btn-primary" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/kitchen/kitchen_reservation.cfm</cfoutput>">Prenotazione/Reservierung</a></div></th>
+			<th colspan="5"><div align="center"><a rel="shadowbox;width=360;height=320" class="btn btn-larg btn-primary" href="<cfoutput>#$.globalConfig('context')#/#$.siteConfig('siteID')#/includes/display_objects/custom/kitchen/kitchen_reservation.cfm</cfoutput>">Prenotazione/Reservierung</a></div></th>
 		</tr>
 		<tr>
 			<th scope="col">Nome/Name</th>
